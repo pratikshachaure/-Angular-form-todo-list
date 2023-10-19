@@ -1,0 +1,13 @@
+#demo{
+    display: none;
+}
+table
+{
+    border: 2px solid black;
+    width: 100%;
+    border-collapse:collapse;;
+}
+td,th{
+    border: 2px solid black;
+    text-align: center;
+}

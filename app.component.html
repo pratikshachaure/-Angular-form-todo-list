@@ -1,0 +1,37 @@
+<form [formGroup]="myfun" (ngSubmit)="submitfun()">
+  <label for="fname">First Name: </label>
+  <input type="text" name="fname" id="" formControlName="fname" #shree> <br> <br>
+  <span *ngIf="bala && bala.invalid" style="color: red;">This filed is not valid</span>
+  <br> <br><label for="sname">Second Name: </label>
+  <input type="text" formControlName="sname" #lande><br> <br>
+  <label for="security">Password : </label>
+  <input type="password" placeholder="password" formControlName="pass" #pword> 
+  <br>
+  <br>
+  <label for="email">Email : </label>
+  <input type="email" placeholder="email" formControlName="uemail" #uemail>
+  <br> <br>
+  <button [disabled]="myfun.invalid">click</button>
+</form>
+
+ <p id="demo">Your name is <b>{{shree.value}}</b> . am i right. I think your name is very sweet and great. and full name is <b>{{shree.value}}{{lande.value}}. listen {{shree.value}} i know your password. don't shock. I am hacker i know everything. do you want watch my magic look at down <h5>{{pword.value}}.</h5>
+i will send you email on this mail {{uemail.value}}</b></p>
+
+<table>
+  <tr>
+    <th>User_Index</th>
+    <th>User_name</th>
+    <th>User_lName</th>
+    <th>User_pass</th>
+    <th>User_email</th>
+    <th>Remove</th>
+  </tr>
+  <tr *ngFor="let i of arr let sr=index">
+    <td>{{sr+1}}</td>
+    <td>{{i.fname}}</td>
+    <td>{{i.sname}}</td>
+    <td>{{i.pass}}</td>
+    <td>{{i.uemail}}</td>
+    <td><button (click)="remove(sr)">remove</button></td>
+  </tr>
+</table>
